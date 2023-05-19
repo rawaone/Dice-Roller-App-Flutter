@@ -1,11 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:test_one/gradient_container.dart';
 
 void main() {
-
-  runApp(MaterialApp(home: Text('Rawa Rashid / This is The first App'),));
-
+  runApp(
+    const MaterialApp(
+      home: Scaffold(
+        body: GradientContainer(),
+      ),
+    ),
+  );
 }
+
+
 
 //void runApp() 
 //}
-
+ 
