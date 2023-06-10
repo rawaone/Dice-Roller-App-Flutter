@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:math';
 
 class DiceRoller extends StatefulWidget{
    const DiceRoller({Key? key}) : super(key: key);
@@ -12,12 +13,17 @@ class DiceRoller extends StatefulWidget{
 
 class _DiceRollerState extends State<DiceRoller>
 {
-  var activeDiceImage = 'assets/images/dice-1.png';
+  //var activeDiceImage = 'assets/images/dice-1.png';
+  var currentDiceRoll = 2;
 
   void rollDice() {
+
+    //var diceRoll = Random().nextInt(6) + 1;
+
     setState(() {
-         activeDiceImage = 'assets/images/dice-4.png';
-    print('chnaging image'); 
+      currentDiceRoll = Random().nextInt(6) + 1;
+         //activeDiceImage = 'assets/images/dice-$diceRoll.png';
+         //print('chnaging image'); 
     });
   }
 
@@ -26,7 +32,7 @@ class _DiceRollerState extends State<DiceRoller>
           mainAxisSize: MainAxisSize.min,
           children: [
             Image.asset(
-              activeDiceImage,
+              'assets/images/dice-$currentDiceRoll.png',
               width: 200,
             ),
             const SizedBox(height: 20,), // this is like <br>, it creates space vertically
